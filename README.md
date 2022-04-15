@@ -44,3 +44,80 @@ La división del problema en problemas pequeños es
 lo que hace posible el algoritmo. La primera parte
 que se implementará es realizar solo una voltereta
 desde una posición pivote
+
+            voltearPizzas(arreglo arreglo, num largo, num): arreglo
+              pizzaTemporal ← 0
+              PARA i← (pivote – 1) HASTA largo:
+                pizzaTemporal ← arreglo[largo-1]
+                arreglo[largo-1] ← arreglo[i]
+                arreglo[i] ← pizzaTemporal
+                largo ← largo-1
+              devolver(arreglo)
+              
+El algoritmo describe una voltereta a las pizzas con
+la espátula, lo que se está realizado es invertir los
+elementos de un arreglo desde una posición n (que
+sería donde se inserta la espátula) hasta el inicio.
+La función voltereta permitirá realizar el intercambio
+de posiciones. La función recibirá un pivote como
+argumento, el cual será el mismo que se
+almacenará en un nuevo arreglo para exportar
+desde dónde realizó la voltereta en un archivo de
+salida.
+Desde una posición 0 hasta una posición n de un
+arreglo, se debe ir evaluando la mayor posición en
+el arreglo para evaluar dónde realizar la voltereta y
+así obtener un nuevo arreglo ordenado
+correctamente, para esto, se realiza la siguiente
+implementación
+
+
+
+              pizzaMayor(arreglo arreglo, num largo, num pivote): indiceMayor
+                mayor ← arreglo[pivote]
+                indiceMayor = pivote
+                  PARA i ← pivote HASTA largo:
+                    SI arreglo[i] > mayor:
+                      mayor ← arreglo[i]
+                      indiceMayor ← i
+              devolver(indiceMayor)
+              
+Con estas dos funciones posible la solución del
+problema a un nivel de pseudocódigo
+
+              ordenarPizzas(arreglo arreglo, num largo):arreglo
+                PARA i ← 1 HASTA largo:
+                  mayor ← pizzaMayor(arreglo, largo, i)
+                  SI (i = largo) ENTONCES
+                    exportarArreglo()
+                  SI NO
+                    SI (mayor = largo) ENTONCES
+                      voltearPizzas(arreglo, largo, i)
+                      cantidadVolteretas ← cantidadVolteretas+ 1
+                      volteretas[cantidadVolteretas] ← i
+                    SI NO
+                      voltearPizzas(arreglo ,largo, mayor)
+                      cantidadVolteretas ← cantidadVolteretas+ 1
+                      volteretas[cantidadVolteretas] ← mayor
+                      voltearPizzas(arreglo ,largo, i)
+                      cantidadVolteretas ← cantidadVolteretas+ 1
+                      volteretas[cantidadVolteretas] ← i
+              devolver(arreglo)
+              
+A nivel de pseudocódigo, la implementación de
+estas funciones resolvería correctamente el
+problema.
+
+Para el análisis de los resultados, se utiliza la
+librería time.h para utilizar la función clock.
+Se realiza una tabla comparativa con diferentes
+entradas y con su respectivo tiempo de ejecución
+
+
+| Cantidad  | Tiempo |
+| ------------- | ------------- |
+| 200  | 0.000880  |
+| 400 | 0.001344  |
+| 800  | 0.003345 |
+| 1600 | 0.012181  |
+| 3200 | 0.036682  |

@@ -1,8 +1,4 @@
-// Nombre: Bastián Escribano
-// Rut: 20.202.091-7
-// Carrera: Ingeniería de Ejecución en Computación e Informática
-// Asignatura: Análisis de Algoritmos y Estructura de Datos
-// Sección: C-3
+
 
 #include <stdio.h>
 #include <stdlib.h>

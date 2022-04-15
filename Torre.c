@@ -1,5 +1,3 @@
-
-
 #include <stdio.h>
 #include <stdlib.h>
 #include <sys/stat.h>
@@ -7,8 +5,8 @@
 #include <time.h>
 
 // Descripción: Función que se encarga de leer la primera linea de un archivo
-// Dominio: 
-// Recorrido: 
+// Dominio: nombre (puntero)
+// Recorrido: valor
 // Complejidad Algorítmica de la Función: O(n)
 int leerCantidad(char *nombre){
     FILE *fp;

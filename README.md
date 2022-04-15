@@ -121,3 +121,95 @@ entradas y con su respectivo tiempo de ejecución
 | 800  | 0.003345 |
 | 1600 | 0.012181  |
 | 3200 | 0.036682  |
+
+Al observar el pseudocódigo, en la función
+ordenarPizzas se aprecia un ciclo y al
+interior, un llamado a una función que contiene otro
+ciclo. Existe solo hasta una
+anidación de ciclos y el resto de instrucciones son
+bifurcaciones, asignaciones u operaciones. Esto
+significará que son constantes, por lo tanto, a simple
+vista, la complejidad del algoritmo, es de O(n2).
+
+Los métodos de ordenamiento clásicos podrían
+resolver este problema de una forma eficiente, de
+hecho, un gran ejemplo podría ser el método de
+ordenamiento rápido (quick sort) que mantiene
+una curva de complejidad O(n log(n)) o el método
+de conteo (counting sort) que mantiene una curva
+de complejidad O(n+k). Sin embargo, la situación
+descrita y el problema específico a resolver, utilizar
+un método similar a estos, sería una utopía con las
+herramientas y condiciones otorgadas. El método
+de ordenamiento invirtiendo y reasignando sin
+duda funciona y encuentra el resultado
+esperado. El algoritmo de ordenamiento asignado a
+esta problemática mantiene una complejidad
+algorítmica similar a la que podría brindar el método
+de burbuja (bubble sort) o el método de inserción
+(insertion sort) que corresponden a una complejidad
+algorítmica de O(n2).
+
+
+            La ejecución y uso del programa dependerá del
+            sistema operativo.
+
+            a. Windows
+            La primera parte es instalar mingw, añadiendo el
+            compilador gcc al PATH.
+
+            Se debe buscar en el botón de inicio el CMD
+            (también es posible iniciar el CMD realizando la
+            combinación de teclas WINDOWS + R y escribiendo
+            CMD)
+
+            Posteriormente se debe localizar en la carpeta
+            contenedora del Torre.c, para esto puede hacerlo
+            con los comandos de el CMD.
+
+            Una vez en la carpeta deberá compilar con gcc
+            escribiendo en el CMD la siguiente línea
+            gcc Torre.c -o Torre
+
+            Cuando ya se haya compilado, el programa está
+            listo para ser ejecutado, para esto deberá ingresar la
+            siguiente línea de código
+
+            Torre {nombreEntrada} {nombreSalida}
+
+            Donde nombreEntrada corresponde al nombre del
+            archivo de entrada el cual se desea leer y el
+            nombreSalida para el archivo a exportar con los
+            resultados.
+
+            Ejemplo:
+            Torre Entrada.in Salida.out
+
+            b. Unix (macOS y Linux)
+
+            En los sistemas basados en Unix, el compilador gcc
+            viene por defecto en la terminal de cada sistema.
+            Para compilar el código se debe localizar en la
+            carpeta contenedora del archivo.c y ejecutar la
+            siguiente línea:
+
+            gcc Torre.c -o Torre
+
+            Para ejecutar el programa debe ejecutar la siguiente
+            línea:
+
+            ./Torre {nombreEntrada} {nombreSalida}
+
+            Donde nombreEntrada corresponde al nombre del
+            archivo de entrada el cual se desea leer y el
+            nombreSalida para el archivo a exportar con los
+            resultados.
+
+            Ejemplo:
+
+            Torre Entrada.in Salida.out
+
+            c. Clonación por GIT
+
+            git clone https://github.com/vastien/computationalcomplexity
+

@@ -1,5 +1,7 @@
 # Complejidad Algorítmica
 
+Nota Final: 6.4
+
 Un recurso es una fuente o suministro del cual se
 produce un beneficio, existen recursos naturales y
 artificiales, que, dependiendo del contexto y la

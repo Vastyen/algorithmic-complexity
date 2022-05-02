@@ -1,6 +1,9 @@
 # Complejidad Algorítmica
 
-Nota Final: 6.4
+Análisis de Algoritmos y Estructura de Datos           
+Departamento de Ingeniería Informática                  
+Universidad de Santiago de Chile                    
+Nota Final: 6.4       
 
 Un recurso es una fuente o suministro del cual se
 produce un beneficio, existen recursos naturales y

@@ -3,7 +3,7 @@
 Analysis of Algorithms and Data Structure         
 Departamento de Ingeniería Informática                  
 Universidad de Santiago de Chile                    
-Final Score: 6.4/7.0   
+Score: 6.4/7.0   
 
 A resource is a source or supply from which
 produces a benefit, there are natural resources and

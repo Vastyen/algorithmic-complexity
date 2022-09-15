@@ -1,80 +1,80 @@
 # Complejidad Algorítmica
 
-Análisis de Algoritmos y Estructura de Datos           
+Analysis of Algorithms and Data Structure         
 Departamento de Ingeniería Informática                  
 Universidad de Santiago de Chile                    
-Nota Final: 6.4       
+Final Score: 6.4/7.0   
 
-Un recurso es una fuente o suministro del cual se
-produce un beneficio, existen recursos naturales y
-artificiales, que, dependiendo del contexto y la
-situación se califican como tal. En el mundo de la
-ingeniería, la gestión de los recursos es de gran
-importancia al momento de la producción, invención
-o innovación de algún proyecto. El tiempo es un
-recurso limitado, por lo tanto, optimizar una solución
-sin que cambie su correcto funcionamiento, es el
-deber de un ingeniero. A través de este
-experimento, donde, se simula un caso real, se
-realizará un análisis e implementación de una
-solución en un lenguaje de programación de medionivel
-(lenguaje C). El principal objetivo es realizar y
-comparar un análisis de complejidad de un
-algoritmo. Se espera que los resultados obtenidos
-en un análisis respectivo tiempo v/s entrada
-adquieran una curva similar a la curva que
-representa la complejidad algorítmica del
-pseudocódigo planteado.
+A resource is a source or supply from which
+produces a benefit, there are natural resources and
+artificial, which, depending on the context and the
+situation are classified as such. In the world of
+engineering, resource management is of great
+importance at the time of production, invention
+or innovation of a project. time is a
+limited resource, therefore optimizing a solution
+without changing its correct operation, it is the
+duty of an engineer. Through this
+experiment, where a real case is simulated,
+will carry out an analysis and implementation of a
+solution in a mid-level programming language
+(C language). The main objective is to perform and
+compare a complexity analysis of a
+algorithm. It is expected that the results obtained
+in a respective analysis time v/s input
+acquire a curve similar to the curve that
+represents the algorithmic complexity of the
+raised pseudocode.
 
-Existe una torre de bases de pizzas que están
-desordenadas que tienen que ser ordenadas de
-menor a mayor, sin embargo, solo se dispone de
-una superficie plana y de una espátula. La base de
-una pizza es una de las primeras etapas antes de
-realizar su completa preparación, por lo tanto,
-cuando existe una base de pizza, no tiene ningún
-lado definido para su posterior etapa.
-Con esto claro y con las herramientas otorgadas, se
-da cuenta que es posible realizar una vuelta a una
-cantidad n de bases de pizza, es decir, es posible
-introducir la espátula entre dos bases de pizza y
-realizar una vuelta completa, donde la última base
-de pizza estará en el lugar de donde se introdujo la
-espátula y la base de pizza donde estuvo la
-espátula, estará al final. Es posible aplicar para una
-torre de bases de pizza, así ordenando de menor a
-mayor sin necesidad de realizar una mayor
-manipulación de las bases de pizza.
-La división del problema en problemas pequeños es
-lo que hace posible el algoritmo. La primera parte
-que se implementará es realizar solo una voltereta
-desde una posición pivote
+A tower of pizza bases that are
+messy that have to be sorted
+smallest to largest, however, only
+a flat surface and a spatula. the basis of
+a pizza is one of the first stages before
+make your complete preparation, therefore,
+when a pizza base exists, it has no
+defined side for later stage.
+With this clear and with the tools provided,
+realizes that it is possible to make a return to a
+number n of pizza bases, that is, it is possible
+insert the spatula between two pizza bases and
+make a full turn, where the last base
+of pizza will be in the place from where the
+spatula and the pizza base where the
+spatula, it will be at the end. It is possible to apply for a
+tower of pizza bases, thus ordering from least to
+greater without the need to carry out a greater
+handling of pizza bases.
+Dividing the problem into small problems is
+what makes the algorithm possible. The first part
+that will be implemented is to perform only one somersault
+from a pivot position
 
-            voltearPizzas(arreglo arreglo, num largo, num): arreglo
-              pizzaTemporal ← 0
-              PARA i← (pivote – 1) HASTA largo:
-                pizzaTemporal ← arreglo[largo-1]
-                arreglo[largo-1] ← arreglo[i]
-                arreglo[i] ← pizzaTemporal
-                largo ← largo-1
-              devolver(arreglo)
+            pizzaFlip(array array, num length, num): array
+              tempPizza ← 0
+              FOR i← (pivot – 1) TO length:
+                tempPizza ← array[length-1]
+                array[length-1] ← array[i]
+                array[i] ← tempPizza
+                length ← length-1
+              return(array)
               
-El algoritmo describe una voltereta a las pizzas con
-la espátula, lo que se está realizado es invertir los
-elementos de un arreglo desde una posición n (que
-sería donde se inserta la espátula) hasta el inicio.
-La función voltereta permitirá realizar el intercambio
-de posiciones. La función recibirá un pivote como
-argumento, el cual será el mismo que se
-almacenará en un nuevo arreglo para exportar
-desde dónde realizó la voltereta en un archivo de
-salida.
-Desde una posición 0 hasta una posición n de un
-arreglo, se debe ir evaluando la mayor posición en
-el arreglo para evaluar dónde realizar la voltereta y
-así obtener un nuevo arreglo ordenado
-correctamente, para esto, se realiza la siguiente
-implementación
+The algorithm describes a somersault to the pizzas with
+the spatula, what is being done is to invert the
+elements of an array from position n (which
+would be where the spatula is inserted) to the start.
+The flip function will allow swapping
+of positions. The function will receive a pivot like
+argument, which will be the same as
+will store in a new array for export
+where you did the flip from in a file
+exit.
+From a position 0 to a position n of a
+arrangement, the highest position must be evaluated in
+the arrangement to assess where to perform the somersault and
+so get a new sorted array
+correctly, for this, the following is done
+implementation.
 
 
 
@@ -87,39 +87,39 @@ implementación
                       indiceMayor ← i
               devolver(indiceMayor)
               
-Con estas dos funciones posible la solución del
-problema a un nivel de pseudocódigo
+With these two functions it is possible to solve the
+problem at a pseudocode level
 
-              ordenarPizzas(arreglo arreglo, num largo):arreglo
-                PARA i ← 1 HASTA largo:
-                  mayor ← pizzaMayor(arreglo, largo, i)
-                  SI (i = largo) ENTONCES
-                    exportarArreglo()
+              pizzasSort(array array, num length):array
+                FOR i ← 1 TO length:
+                  mayor ← pizzaMayor(array, length, i)
+                  IF (i = largo) THEN:
+                    exportArray()
                   SI NO
-                    SI (mayor = largo) ENTONCES
-                      voltearPizzas(arreglo, largo, i)
+                    SI (mayor = length) ENTONCES
+                      voltearPizzas(arreglo, length, i)
                       cantidadVolteretas ← cantidadVolteretas+ 1
                       volteretas[cantidadVolteretas] ← i
                     SI NO
-                      voltearPizzas(arreglo ,largo, mayor)
+                      voltearPizzas(arreglo ,length, mayor)
                       cantidadVolteretas ← cantidadVolteretas+ 1
                       volteretas[cantidadVolteretas] ← mayor
-                      voltearPizzas(arreglo ,largo, i)
+                      voltearPizzas(arreglo ,length, i)
                       cantidadVolteretas ← cantidadVolteretas+ 1
                       volteretas[cantidadVolteretas] ← i
               devolver(arreglo)
               
-A nivel de pseudocódigo, la implementación de
-estas funciones resolvería correctamente el
-problema.
+At the pseudocode level, the implementation of
+these functions would correctly solve the
+issue.
 
-Para el análisis de los resultados, se utiliza la
-librería time.h para utilizar la función clock.
-Se realiza una tabla comparativa con diferentes
-entradas y con su respectivo tiempo de ejecución
+For the analysis of the results, the
+time.h library to use the clock function.
+A comparative table is made with different
+inputs and with their respective execution time
 
 
-| Cantidad  | Tiempo |
+| Pizzas Amount  | Time |
 | ------------- | ------------- |
 | 200  | 0.000880  |
 | 400 | 0.001344  |
@@ -127,33 +127,33 @@ entradas y con su respectivo tiempo de ejecución
 | 1600 | 0.012181  |
 | 3200 | 0.036682  |
 
-Al observar el pseudocódigo, en la función
-ordenarPizzas se aprecia un ciclo y al
-interior, un llamado a una función que contiene otro
-ciclo. Existe solo hasta una
-anidación de ciclos y el resto de instrucciones son
-bifurcaciones, asignaciones u operaciones. Esto
-significará que son constantes, por lo tanto, a simple
-vista, la complejidad del algoritmo, es de O(n2).
+Looking at the pseudocode, in the function
+pizzasSort shows a cycle and when
+inside, a call to a function that contains another
+cycle. There is only up to one
+loop nesting and the rest of the instructions are
+branches, assignments or operations. This
+will mean that they are constant, therefore, to simple
+view, the complexity of the algorithm is O(n2).
 
-Los métodos de ordenamiento clásicos podrían
-resolver este problema de una forma eficiente, de
-hecho, un gran ejemplo podría ser el método de
-ordenamiento rápido (quick sort) que mantiene
-una curva de complejidad O(n log(n)) o el método
-de conteo (counting sort) que mantiene una curva
-de complejidad O(n+k). Sin embargo, la situación
-descrita y el problema específico a resolver, utilizar
-un método similar a estos, sería una utopía con las
-herramientas y condiciones otorgadas. El método
-de ordenamiento invirtiendo y reasignando sin
-duda funciona y encuentra el resultado
-esperado. El algoritmo de ordenamiento asignado a
-esta problemática mantiene una complejidad
-algorítmica similar a la que podría brindar el método
-de burbuja (bubble sort) o el método de inserción
-(insertion sort) que corresponden a una complejidad
-algorítmica de O(n2).
+Classical sorting methods could
+solve this problem efficiently.
+In fact, a great example might be the method of
+quick sort (quick sort) that keeps
+a complexity curve O(n log(n)) or the method
+counting sort that maintains a curve
+of complexity O(n+k). However, the situation
+described and the specific problem to be solved, use
+a method similar to these, would be a utopia with the
+tools and conditions granted. The method
+ordering by inverting and reallocating without
+doubt it works and find the result
+expected. The sorting algorithm assigned to
+This problem remains complex
+algorithm similar to that which could be provided by the method
+bubble sort or insert method
+(insertion sort) that correspond to a complexity
+algorithmic O(n2).
 
 
             La ejecución y uso del programa dependerá del

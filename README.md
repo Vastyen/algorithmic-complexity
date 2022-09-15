@@ -1,4 +1,4 @@
-# Complejidad Algorítmica
+# Algorithmic Complexity
 
 Analysis of Algorithms and Data Structure         
 Departamento de Ingeniería Informática                  
